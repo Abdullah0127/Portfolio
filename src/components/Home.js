@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 
+// ✅ Move roles outside (fix for dependency issue)
+const roles = ["React Developer", "WordPress Developer"];
+
 function Home() {
-  // Typing animation roles
-  const roles = ["React Developer", "WordPress Developer"];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const current = roles[index % roles.length];
-    let speed = isDeleting ? 50 : 100;
+    const speed = isDeleting ? 50 : 100;
 
     const timer = setTimeout(() => {
       setText((prev) =>
@@ -27,7 +28,7 @@ function Home() {
     }, speed);
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, index]);
+  }, [text, isDeleting, index]); // ✅ no roles here
 
   return (
     <div
@@ -42,7 +43,6 @@ function Home() {
           Abdullah <span className="hero-highlight">Khan</span>
         </h1>
 
-        {/* Typing Title */}
         <h2 className="hero-title">
           {text}
           <span className="cursor">|</span>
@@ -53,8 +53,7 @@ function Home() {
           web applications using
           <span className="hero-highlight"> React</span>,
           <span className="hero-highlight"> JavaScript</span>, and scalable
-          WordPress solutions. Passionate about clean UI, performance, and
-          real-world problem solving.
+          WordPress solutions.
         </p>
 
         <div className="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap mt-4">
@@ -98,7 +97,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Right Container (NO CHANGE) */}
+      {/* Right Container */}
       <div className="right-container">
         <div className="code-window">
           <div className="code-topbar">
@@ -119,47 +118,35 @@ function Home() {
             <div className="code-line pl">
               <span className="code-key">name</span>
               <span className="code-white">: </span>
-              <span className="code-string">"Abdullah Khan"</span>
-              <span className="code-white">,</span>
+              <span className="code-string">"Abdullah Khan"</span>,
             </div>
 
             <div className="code-line pl">
               <span className="code-key">role</span>
               <span className="code-white">: </span>
-              <span className="code-string">"Front End Developer"</span>
-              <span className="code-white">,</span>
+              <span className="code-string">"Front End Developer"</span>,
             </div>
 
             <div className="code-line pl">
               <span className="code-key">skills</span>
-              <span className="code-white">: </span>
-              <span className="code-brace">[</span>
-              <span className="code-string">"React"</span>
-              <span className="code-white">, </span>
-              <span className="code-string">"JavaScript"</span>
-              <span className="code-white">, </span>
-              <span className="code-string">"Bootstrap"</span>
-              <span className="code-brace">]</span>
-              <span className="code-white">,</span>
+              <span className="code-white">: </span>[
+              <span className="code-string">"React"</span>,{" "}
+              <span className="code-string">"JavaScript"</span>,{" "}
+              <span className="code-string">"Bootstrap"</span>],
             </div>
 
             <div className="code-line pl">
-              <span className="code-key">hardWorking</span>
-              <span className="code-white">: </span>
-              <span className="code-keyword">true</span>
-              <span className="code-white">,</span>
+              <span className="code-key">hardWorking</span>:{" "}
+              <span className="code-keyword">true</span>,
             </div>
 
             <div className="code-line pl">
-              <span className="code-key">problemSolver</span>
-              <span className="code-white">: </span>
-              <span className="code-keyword">true</span>
-              <span className="code-white">,</span>
+              <span className="code-key">problemSolver</span>:{" "}
+              <span className="code-keyword">true</span>,
             </div>
 
             <div className="code-line pl">
-              <span className="code-key">passion</span>
-              <span className="code-white">: </span>
+              <span className="code-key">passion</span>:{" "}
               <span className="code-string">"Building great UI"</span>
             </div>
 
@@ -171,29 +158,22 @@ function Home() {
 
             <div className="code-line">
               <span className="code-keyword">function </span>
-              <span className="code-fn">hire</span>
-              <span className="code-white">(</span>
-              <span className="code-var">developer</span>
-              <span className="code-white">) {"{"}</span>
+              <span className="code-fn">hire</span>(
+              <span className="code-var">developer</span>) {"{"}
             </div>
 
             <div className="code-line pl">
               <span className="code-keyword">return </span>
-              <span className="code-string">"Best Decision Ever! 🚀"</span>
-              <span className="code-white">;</span>
+              <span className="code-string">"Best Decision Ever! 🚀"</span>;
             </div>
 
-            <div className="code-line">
-              <span className="code-white">{"}"}</span>
-            </div>
+            <div className="code-line">{"}"}</div>
 
             <br />
 
             <div className="code-line typing-line">
-              <span className="code-fn">hire</span>
-              <span className="code-white">(</span>
-              <span className="code-var">developer</span>
-              <span className="code-white">)</span>
+              <span className="code-fn">hire</span>(
+              <span className="code-var">developer</span>)
               <span className="cursor">▌</span>
             </div>
           </div>
