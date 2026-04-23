@@ -102,7 +102,13 @@ function About() {
                   "WordPress",
                   "WooCommerce",
                   "Git & GitHub",
-                  "PHP (Basic)",
+                  "PHP",
+                  "LMS",
+                  "Elementor",
+                  "Divi",
+                  "Gutenberg",
+                  "WP Bakery",
+                  "JetEngine",
                 ].map((skill) => (
                   <span key={skill} className="skill-badge">
                     {skill}

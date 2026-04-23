@@ -273,24 +273,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-
-    padding: 180px 20px 60px 20px;
-  }
-
-  .hero-name {
-    font-size: 2.8rem;
-  }
-
-  .right-container {
-    margin-top: 40px;
-  }
-
-  .floating-badge {
-    display: none;
-  }
-}
 
 
 /* About Section */
@@ -467,23 +449,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-
-  .about-img,
-  .about-img-border {
-    width: 300px;
-    height: 300px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .about-heading {
-    font-size: 1.4rem;
-    margin-top: 40px;
-  }
-}
 
 
 /* Experience Section */
@@ -763,19 +728,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .exp-detail-card {
-    padding: 24px;
-  }
-
-  .exp-card-role {
-    font-size: 1.3rem;
-  }
-}
 
 
 /* Projects Section */
@@ -1016,15 +968,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .project-img-wrapper {
-    height: 180px;
-  }
-}
 
 
 /* Skills Section */
@@ -1228,20 +1171,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .skills-card,
-  .skill-info-card {
-    padding: 24px;
-  }
-
-  .skill-info-card {
-    margin-top: 20px;
-  }
-}
 
 /* Testimonial Section */
 .testimonial-section {
@@ -1494,19 +1423,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .featured-testimonial {
-    padding: 28px 20px;
-  }
-
-  .featured-text {
-    font-size: 1rem;
-  }
-}
 
 /* Contact Section */
 .contact-section {
@@ -1783,19 +1699,6 @@ body p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .contact-form-card {
-    padding: 24px;
-  }
-
-  .form-heading {
-    font-size: 1.2rem;
-  }
-}
 
 /* Footer */
 .footer {
@@ -1871,7 +1774,7 @@ body p {
 .custom-navbar {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
-  padding: 12px 0;
+  padding: 12px 0px;
   transition: 0.3s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
@@ -1929,20 +1832,122 @@ body p {
   width: 100%;
 }
 
-/* Mobile Fix */
-@media (max-width: 991px) {
+/* Navbar Scroll Effect */
+.custom-navbar.scrolled {
+  background: #000 !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   Mobile (single breakpoint)
+   ========================= */
+@media (max-width: 768px) {
+  /* Global safety for small screens */
+  .hero-section,
+  .about-section,
+  .experience-section,
+  .projects-section,
+  .skills-section,
+  .testimonial-section,
+  .contact-section {
+    overflow-x: clip;
+  }
+
+  /* Navbar */
   .custom-navbar {
     position: relative;
+    padding: 12px 2px;
+  }
+
+  .custom-navbar img {
+    height: 70px !important;
+    max-width: 220px;
+    object-fit: contain;
   }
 
   .nav-link {
     margin-left: 0;
     padding: 10px 0;
   }
-}
 
-/* Navbar Scroll Effect */
-.custom-navbar.scrolled {
-  background: #000 !important;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  /* Hero */
+  .hero-section {
+    padding: 180px 20px 60px 20px;
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .right-container {
+    margin-top: 40px;
+  }
+
+  .floating-badge {
+    display: none;
+  }
+
+  /* Shared headings */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* About */
+  .about-img,
+  .about-img-border {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .about-heading {
+    font-size: 1.4rem;
+    margin-top: 40px;
+  }
+
+  .exp-badge {
+    right: 0;
+  }
+
+  /* Experience */
+  .exp-detail-card {
+    padding: 24px;
+  }
+
+  .exp-card-role {
+    font-size: 1.3rem;
+  }
+
+  /* Projects */
+  .project-img-wrapper {
+    height: 180px;
+  }
+
+  /* Skills */
+  .skills-card,
+  .skill-info-card {
+    padding: 24px;
+  }
+
+  .skill-info-card {
+    margin-top: 20px;
+  }
+
+  /* Testimonial */
+  .featured-testimonial {
+    padding: 28px 20px;
+  }
+
+  .featured-text {
+    font-size: 1rem;
+  }
+
+  /* Contact */
+  .contact-form-card {
+    padding: 24px;
+  }
+
+  .form-heading {
+    font-size: 1.2rem;
+  }
 }
