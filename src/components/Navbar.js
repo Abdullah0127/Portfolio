@@ -3,7 +3,7 @@ import logo from "../assests/A-removebg-preview.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
+    <nav className="navbar navbar-expand-lg custom-navbar ">
       <div className="container">
         <img style={{ height: "100px" }} src={logo} alt="logo" />
 

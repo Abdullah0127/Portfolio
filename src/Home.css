@@ -1874,6 +1874,9 @@ body p {
   padding: 12px 0;
   transition: 0.3s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 
 .navbar-toggler {
@@ -1928,6 +1931,10 @@ body p {
 
 /* Mobile Fix */
 @media (max-width: 991px) {
+  .custom-navbar {
+    position: relative;
+  }
+
   .nav-link {
     margin-left: 0;
     padding: 10px 0;
