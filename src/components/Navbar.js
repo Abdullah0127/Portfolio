@@ -1,12 +1,11 @@
 import React from "react";
+import logo from "../assests/A-removebg-preview.png";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
       <div className="container">
-        <a className="navbar-brand fw-bold" href="/">
-          Abdullah <span className="highlight">Khan</span>
-        </a>
+        <img style={{ height: "100px" }} src={logo} alt="logo" />
 
         <button
           className="navbar-toggler border-0"
